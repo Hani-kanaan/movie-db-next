@@ -13,7 +13,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <div className="transition-colors duration-300 min-h-screen select-none dark:bg-gray-700 dark:text-white  text-gray-700">
+      <div className="transition-colors duration-300 min-h-screen   dark:bg-gray-700 dark:text-white  text-gray-700 ">
         {children}
       </div>
     </ThemeProvider>
