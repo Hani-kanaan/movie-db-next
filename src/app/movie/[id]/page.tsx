@@ -14,15 +14,15 @@ interface Params {
 
 export default async function MoviePage({ params }: { params: Params }) {
   const movie = await getMovie(Number(params.id));
-  
-  console.log(`movie id: ${params.id}`);
 
   return (
     <div className="w-full">
       <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6">
         <div className="relative w-full h-64 md:h-96">
           <Image
-            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path || movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original${
+              movie.backdrop_path || movie.poster_path
+            }`}
             alt={movie.title || "Movie image"}
             fill
             className="object-cover rounded-lg"
@@ -31,12 +31,19 @@ export default async function MoviePage({ params }: { params: Params }) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-        
-        <div className="p-4 md:p-8">
-          <h1 className="text-3xl font-bold">{movie.title}</h1>
-          <p className="mt-4">{movie.overview}</p>
-          <p className="mt-2 text-gray-400">
-            Release Date: {movie.release_date}
+
+        <div className="p-2 md:p-8">
+          <h2 className="text-lg mb-3 font-bold">
+            {movie.title || movie.name}
+          </h2>
+
+          <p className="text-lg mb-3 ">
+            <span className="font-semibold mr-1">Overview:</span>
+            {movie.overview}
+          </p>
+          <p className="mb-3">
+            <span className="font-semibold mr-1">Rating:</span>
+            {movie.vote_count}
           </p>
         </div>
       </div>
