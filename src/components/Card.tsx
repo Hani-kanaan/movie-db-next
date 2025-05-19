@@ -31,7 +31,7 @@ export default function Card({ result }: { result: any }) {
         <p className="flex items-center">
           {result.release_date || result.first_air_date}
           <FiThumbsUp className="h-5 me-1 ms-3" />
-          {result.vote_count}
+          {result.vote_average}
         </p>
       </div>
       </Link>
