@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
+import MovieActions from "@/components/MovieActions";
 async function getMovie(movieId: number) {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
@@ -35,6 +35,8 @@ export default async function MoviePage({ params }: { params: Params }) {
         <div className="p-2 md:p-8">
           <h2 className="text-lg mb-3 font-bold">
             {movie.title || movie.name}
+            <MovieActions />
+
           </h2>
 
           <p className="text-lg mb-3 ">
@@ -45,6 +47,7 @@ export default async function MoviePage({ params }: { params: Params }) {
             <span className="font-semibold mr-1">Rating:</span>
             {movie.vote_average}
           </p>
+          
         </div>
       </div>
     </div>

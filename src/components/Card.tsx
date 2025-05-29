@@ -2,7 +2,7 @@ import React from "react";
 import { FiThumbsUp } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-
+import { FaHeart } from "react-icons/fa6";
 export default function Card({ result }: { result: any }) {
   return (
     <div className=" cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group">
@@ -10,9 +10,9 @@ export default function Card({ result }: { result: any }) {
       <Image
         src={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
         alt="image is not available"
-        width={1000}
-        height={300}
-        className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200"
+        width={800}
+        height={500}
+        className="sm:rounded-t-lg group-hover:opacity-80   transition-transform duration-400 w-full h-64 object-cover"
         style={{
           maxWidth: "100%",
           height: "auto",
